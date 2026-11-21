@@ -11,8 +11,21 @@ const app = express();
 
 // ================= MIDDLEWARE =================
 
+// CORS CONFIGURATION FOR LOCAL + LIVE DEPLOYMENT
+const allowedOrigins = [
+    "http://localhost:5173",
+    process.env.FRONTEND_URI
+].filter(Boolean);
+
 app.use(cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: (origin, callback) => {
+        // Allow requests without an origin (e.g. server-to-server)
+        if (!origin || allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+
+        return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true
 }));
 
@@ -68,8 +81,8 @@ const startServer = async () => {
     try {
         await connectDB();
 
-        app.listen(PORT, () => {
-            console.log(`Server running on port ${PORT}`);
+        app.listen(PORT, "0.0.0.0", () => {
+            console.log(`ShopSphere API running on port ${PORT}`);
         });
 
     } catch (error) {
