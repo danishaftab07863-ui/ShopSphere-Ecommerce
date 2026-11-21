@@ -1,0 +1,153 @@
+.main-navbar {
+    width: 100%;
+    min-height: 75px;
+    padding: 12px 5%;
+    background: var(--card-bg, #ffffff);
+    border-bottom: 1px solid var(--border-color, #e5e7eb);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.navbar-logo {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8b5cf6, #4f46e5);
+    color: white;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.navbar-brand-text {
+    color: #7c3aed;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 18px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: var(--text-color, #222);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+    color: #7c3aed;
+}
+
+.navbar-theme-btn,
+.navbar-logout-btn {
+    border: none;
+    border-radius: 7px;
+    padding: 10px 13px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.navbar-theme-btn {
+    background: #ede9fe;
+    color: #5b21b6;
+}
+
+.navbar-logout-btn {
+    background: #dc2626;
+    color: white;
+}
+
+.navbar-theme-btn:hover,
+.navbar-logout-btn:hover {
+    opacity: 0.85;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--text-color, #222);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+[data-theme="dark"] .main-navbar {
+    background: var(--card-bg, #1f2937);
+}
+
+[data-theme="dark"] .navbar-brand-text {
+    color: #a78bfa;
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 950px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: var(--card-bg, #ffffff);
+        border-bottom: 1px solid var(--border-color, #e5e7eb);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-links a {
+        padding: 8px;
+    }
+
+    .navbar-theme-btn,
+    .navbar-logout-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-navbar {
+        padding: 12px 4%;
+    }
+
+    .navbar-brand-text {
+        font-size: 20px;
+    }
+
+    .navbar-logo {
+        width: 36px;
+        height: 36px;
+        font-size: 22px;
+    }
+}

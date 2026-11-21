@@ -1,0 +1,356 @@
+/* GLOBAL RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* THEME VARIABLES */
+
+:root {
+  --bg-color: #f4f6f9;
+  --card-bg: #ffffff;
+  --text-color: #222222;
+  --secondary-text: #666666;
+  --border-color: #dddddd;
+  --input-bg: #ffffff;
+  --primary-color: #2563eb;
+  --shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+  --bg-color: #121826;
+  --card-bg: #1e293b;
+  --text-color: #f1f5f9;
+  --secondary-text: #b0becf;
+  --border-color: #475569;
+  --input-bg: #273449;
+  --primary-color: #3b82f6;
+  --shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* BODY */
+
+html {
+  transition: background-color 0.3s ease;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* THEME TOGGLE BUTTON */
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 11px 17px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+}
+
+/* HOME PAGE */
+
+.container {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.container h1 {
+  margin-bottom: 15px;
+  color: #2563eb;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+/* DARK MODE HOME HEADING */
+
+[data-theme="dark"] .container h1 {
+  color: #60a5fa;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.nav-links a,
+.nav-links button {
+  padding: 12px 22px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* AUTH PAGES */
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.auth-form h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.auth-form>p {
+  text-align: center;
+  color: var(--secondary-text);
+  margin-bottom: 25px;
+}
+
+.auth-form label {
+  display: block;
+  margin: 15px 0 7px;
+  font-weight: 600;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px;
+  background: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.auth-form input::placeholder {
+  color: var(--secondary-text);
+}
+
+.auth-form button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 13px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.auth-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-form a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.auth-form>p:last-child {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.message {
+  padding: 10px;
+  margin-bottom: 15px;
+  background: #fee2e2;
+  color: #b91c1c;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* GLOBAL ELEMENTS */
+
+input,
+textarea,
+select {
+  color: var(--text-color);
+}
+
+button {
+  transition: 0.2s ease;
+}
+
+/* =================================
+   SHOPSPHERE BRANDING
+================================= */
+
+.shopsphere-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.shopsphere-logo {
+  width: 75px;
+  height: 75px;
+  flex-shrink: 0;
+}
+
+.shopsphere-brand-text h2 {
+  font-size: 27px;
+  font-weight: 800;
+  color: #7c3aed;
+  margin: 0;
+}
+
+.shopsphere-brand-text p {
+  font-size: 12px;
+  color: var(--secondary-text);
+  margin: 4px 0 0;
+  letter-spacing: 0.5px;
+}
+
+/* AUTH PAGE LOGO */
+
+.auth-form .shopsphere-brand {
+  margin-bottom: 20px;
+}
+
+/* HOME PAGE LOGO */
+
+.container>.shopsphere-brand {
+  justify-content: flex-start;
+  margin-bottom: 25px;
+}
+
+/* DARK MODE BRANDING */
+
+[data-theme="dark"] .shopsphere-brand-text h2 {
+  color: #a78bfa;
+}
+
+/* RESPONSIVE BRANDING */
+
+@media (max-width: 480px) {
+  .shopsphere-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .shopsphere-brand-text h2 {
+    font-size: 23px;
+  }
+
+  .shopsphere-brand-text p {
+    font-size: 10px;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .theme-toggle {
+    top: 12px;
+    right: 12px;
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+
+  .container {
+    margin: 80px auto 40px;
+    padding: 20px;
+  }
+
+  .container h1 {
+    font-size: 28px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-form {
+    padding: 25px 20px;
+  }
+}
+/* SHOPSPHERE HOME BRAND FIX */
+
+.container>.shopsphere-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 0 auto 30px;
+  text-align: left;
+}
+
+.container>.shopsphere-brand .shopsphere-logo {
+  width: 85px;
+  height: 85px;
+}
+
+.container>.shopsphere-brand .shopsphere-brand-text h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #7c3aed;
+}
+
+.container>.shopsphere-brand .shopsphere-brand-text p {
+  color: var(--secondary-text);
+  font-size: 13px;
+}
+
+[data-theme="dark"] .container>.shopsphere-brand h2 {
+  color: #a78bfa;
+}
+
+@media (max-width: 480px) {
+  .container>.shopsphere-brand .shopsphere-logo {
+    width: 65px;
+    height: 65px;
+  }
+
+  .container>.shopsphere-brand .shopsphere-brand-text h2 {
+    font-size: 25px;
+  }
+}

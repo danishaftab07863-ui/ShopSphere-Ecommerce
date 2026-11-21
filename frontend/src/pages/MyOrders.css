@@ -1,0 +1,549 @@
+/* ============================= */
+/* MY ORDERS PAGE */
+/* ============================= */
+
+.my-orders-page {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+.my-orders-page h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2563eb;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* ORDER CARD */
+
+.order-card {
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.order-header h3 {
+    color: var(--text-color);
+}
+
+/* ORDER STATUS */
+
+.order-status {
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.order-status.confirmed {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.order-status.shipped {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.order-status.delivered {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.order-status.cancelled {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* ORDER PRODUCTS */
+
+.order-products {
+    margin-top: 20px;
+    padding: 15px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.order-product {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 12px 0;
+    color: var(--text-color);
+}
+
+.order-total {
+    text-align: right;
+    margin: 18px 0;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+/* ORDER ADDRESS */
+
+.order-address {
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.order-address h4 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.order-address p {
+    margin: 5px 0;
+    color: var(--secondary-text);
+}
+
+/* EMPTY ORDERS */
+
+.no-orders {
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.no-orders h2 {
+    color: #2563eb;
+}
+
+/* LOADING AND ERROR */
+
+.orders-loading,
+.orders-error {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.orders-loading {
+    color: var(--text-color);
+}
+
+.orders-error {
+    color: #dc2626;
+}
+
+/* ============================= */
+/* DELETE ORDER BUTTON */
+/* ============================= */
+
+.delete-order-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.delete-order-btn:hover {
+    background: #b91c1c;
+}
+
+.delete-order-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ============================= */
+/* PAYMENT DETAILS */
+/* ============================= */
+
+.payment-details {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin: 18px 0;
+    border-radius: 8px;
+}
+
+.payment-details h4 {
+    margin-bottom: 12px;
+    color: var(--text-color);
+}
+
+.payment-details p {
+    margin: 8px 0;
+    color: var(--secondary-text);
+}
+
+.payment-status.paid {
+    color: #15803d;
+}
+
+.payment-status.pending {
+    color: #d97706;
+}
+
+.payment-status.failed {
+    color: #dc2626;
+}
+
+/* ============================= */
+/* ORDER TRACKING */
+/* ============================= */
+
+.order-tracking {
+    margin: 22px 0;
+    padding: 20px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.order-tracking h4 {
+    margin-bottom: 20px;
+    color: #2563eb;
+}
+
+.tracking-timeline {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    position: relative;
+}
+
+.tracking-step {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    min-width: 0;
+}
+
+.tracking-indicator {
+    width: 34px;
+    height: 34px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.tracking-step.completed .tracking-indicator {
+    background: #16a34a;
+}
+
+.tracking-step-content strong {
+    display: block;
+    font-size: 13px;
+    color: var(--text-color);
+}
+
+.tracking-step-content p {
+    margin: 6px 0;
+    font-size: 11px;
+    color: var(--secondary-text);
+}
+
+.tracking-step-content small {
+    font-size: 10px;
+    color: var(--secondary-text);
+}
+
+/* TRACKING HISTORY */
+
+.tracking-history {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.tracking-history h5 {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.tracking-history-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tracking-history-item strong {
+    color: #15803d;
+    font-size: 13px;
+}
+
+.tracking-history-item p {
+    margin: 5px 0;
+    font-size: 13px;
+    color: var(--text-color);
+}
+
+.tracking-history-item small {
+    color: var(--secondary-text);
+    font-size: 11px;
+}
+
+/* CANCELLED ORDER */
+
+.tracking-cancelled {
+    padding: 15px;
+    background: #fee2e2;
+    color: #b91c1c;
+    border-radius: 8px;
+}
+
+.tracking-cancelled p {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+/* ============================= */
+/* DOWNLOAD INVOICE BUTTON */
+/* ============================= */
+
+.download-invoice-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.download-invoice-btn:hover {
+    background: #1d4ed8;
+}
+
+.download-invoice-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ============================= */
+/* DARK MODE */
+/* ============================= */
+
+[data-theme="dark"] .my-orders-page h1,
+[data-theme="dark"] .no-orders h2,
+[data-theme="dark"] .order-tracking h4 {
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .order-card {
+    background: var(--card-bg);
+    color: #f1f5f9;
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .order-header h3,
+[data-theme="dark"] .order-product,
+[data-theme="dark"] .order-total {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .order-address,
+[data-theme="dark"] .payment-details,
+[data-theme="dark"] .order-tracking {
+    background: #273449;
+    border-color: #475569;
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .order-address h4,
+[data-theme="dark"] .payment-details h4 {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .order-address p,
+[data-theme="dark"] .payment-details p {
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .order-products {
+    border-color: #475569;
+}
+
+[data-theme="dark"] .tracking-history {
+    border-color: #475569;
+}
+
+[data-theme="dark"] .tracking-history h5,
+[data-theme="dark"] .tracking-history-item p {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .tracking-step-content strong {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .tracking-step-content p,
+[data-theme="dark"] .tracking-step-content small,
+[data-theme="dark"] .tracking-history-item small {
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .no-orders {
+    background: var(--card-bg);
+    color: #f1f5f9;
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .orders-loading {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .payment-status.paid {
+    color: #86efac;
+}
+
+[data-theme="dark"] .payment-status.pending {
+    color: #fcd34d;
+}
+
+[data-theme="dark"] .payment-status.failed {
+    color: #fca5a5;
+}
+
+[data-theme="dark"] .tracking-history-item strong {
+    color: #86efac;
+}
+
+[data-theme="dark"] .tracking-cancelled {
+    background: #451a1a;
+    color: #fecaca;
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+
+@media (max-width: 600px) {
+    .my-orders-page {
+        padding: 12px;
+    }
+
+    .order-card {
+        padding: 16px;
+    }
+
+    .order-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .order-product {
+        font-size: 14px;
+    }
+
+    .order-total {
+        font-size: 16px;
+    }
+
+    .tracking-timeline {
+        gap: 4px;
+    }
+
+    .tracking-indicator {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .tracking-step-content strong {
+        font-size: 11px;
+    }
+
+    .tracking-step-content small {
+        font-size: 9px;
+    }
+
+    .order-tracking {
+        padding: 14px;
+    }
+}
+/* ORDER PRICE SUMMARY */
+
+.order-price-summary {
+    margin-top: 22px;
+    padding: 18px;
+    border-radius: 10px;
+    background: var(--card-bg, #f5f5f5);
+    border: 1px solid var(--border-color, #ddd);
+}
+
+.order-price-summary h4 {
+    margin-bottom: 14px;
+    color: var(--text-color);
+}
+
+.order-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+.order-coupon-code {
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.order-discount-row strong {
+    color: #16a34a;
+}
+
+.order-price-summary .order-total {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-color, #ccc);
+    color: var(--text-color);
+    font-size: 17px;
+    text-align: right;
+}
+
+@media (max-width: 480px) {
+    .order-price-row {
+        font-size: 14px;
+    }
+
+    .order-price-summary {
+        padding: 14px;
+    }
+}
